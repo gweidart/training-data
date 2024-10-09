@@ -1,0 +1,47 @@
+pragma solidity ^0.4.17;
+contract SafeMath {
+function safeMul(uint256 a, uint256 b) internal returns (uint256) {
+uint256 c = a * b;
+assert(a == 0 || c / a == b);
+return c;
+}
+function safeDiv(uint256 a, uint256 b) internal returns (uint256) {
+assert(b > 0);
+uint256 c = a / b;
+assert(a == b * c + a % b);
+return c;
+}
+function safeSub(uint256 a, uint256 b) internal returns (uint256) {
+assert(b <= a);
+return a - b;
+}
+function safeAdd(uint256 a, uint256 b) internal returns (uint256) {
+uint256 c = a + b;
+assert(c>=a && c>=b);
+return c;
+}
+function assert(bool assertion) internal {
+if (!assertion) {
+throw;
+}
+}
+}
+contract owned {
+address public owner;
+function owned() {
+owner = msg.sender;
+}
+modifier onlyOwner {
+require(msg.sender == owner);
+_;
+}
+function transferOwnership(address newOwner) onlyOwner {
+owner = newOwner;
+}
+}
+contract MintableToken is SafeMath ,owned{
+string public name;
+string public symbol;
+uint8 public decimals;
+uint256 public totalSupply;
+address public owner;

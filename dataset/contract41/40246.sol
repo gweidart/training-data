@@ -1,0 +1,4 @@
+contract Eater{
+function(){
+}
+}
