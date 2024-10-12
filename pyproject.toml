@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "solt"
+version = "0.1.0"
+description = ""
+authors = ["gweidart"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+scikit-learn = "^1.5.2"
+numpy = "^1.24.0"
+keras = "^3.5.0"
+isort = "^5.13.2"
+black = "24.2.0"
+tensorflow-cpu = "^2.17.0"
+eth-ape = {extras = ["recommended-plugins"], version = "^0.8.15"}
+joblib = "^1.4.2"
+imblearn = "^0.0"
+rich = "^13.9.1"
+beautifulsoup4 = "^4.12.3"
+pandas = "^2.2.3"
+torch = {version = "^2.4.1+cpu", source = "pytorch_cpu"}
+torchvision = {version = "^0.19.1+cpu", source = "pytorch_cpu"}
+torch-geometric = "^2.6.1"
+networkx = "^3.3"
+solc-select = "^1.0.4"
+antlr4-python3-runtime = "4.13.2"
+simplejson = "^3.19.3"
+antlr4-tools = "^0.2.1"
+transformers = "^4.45.2"
+datasets = "^3.0.1"
+
+
+[[tool.poetry.source]]
+name = "pytorch_cpu"
+url = "https://download.pytorch.org/whl/cpu"
+priority = "explicit"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

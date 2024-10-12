@@ -1,3 +1,0 @@
-contract Empty{
-function Empty(){}
-}
